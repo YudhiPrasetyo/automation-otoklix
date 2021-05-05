@@ -24,16 +24,22 @@ public class AutomationSauceDemo2 {
         WebElement btnLogin = driver.findElement(By.cssSelector("input[id*='login-button']"));
         btnLogin.click();
 
+        WebElement btnSorting = driver.findElement(By.cssSelector("select[class*=product_sort_container"));
+        btnSorting.click();
+
+        WebElement sortNameDesc = driver.findElement(By.cssSelector("option[value*=za"));
+        sortNameDesc.click();
+
         WebElement itemBackPack = driver.findElement(By.xpath("//div[contains(text(), 'Sauce Labs Backpack')]"));
         itemBackPack.click();
 
         WebElement btnAddToCart = driver.findElement(By.cssSelector("button[class*='btn_primary']"));
         btnAddToCart.click();
 
-        WebElement iconShoppingCart = driver.findElement(By.cssSelector("svg[data-icon='shopping-cart']"));
+        WebElement iconShoppingCart = driver.findElement(By.cssSelector("span[class*='shopping_cart_badge']"));
         iconShoppingCart.click();
 
-        WebElement btnCheckout = driver.findElement(By.cssSelector("a[class*='checkout_button']"));
+        WebElement btnCheckout = driver.findElement(By.cssSelector("button[class*='checkout_button']"));
         btnCheckout.click();
 
         WebElement inputFirstName = driver.findElement(By.cssSelector("input[id*='first-name']"));
@@ -48,12 +54,12 @@ public class AutomationSauceDemo2 {
         WebElement btnContinue = driver.findElement(By.cssSelector("input[class*='cart_button']"));
         btnContinue.click();
 
-        WebElement btnFinish = driver.findElement(By.cssSelector("a[class*='cart_button']"));
+        WebElement btnFinish = driver.findElement(By.cssSelector("button[class*='cart_button']"));
         btnFinish.click();
 
-        WebElement labelFinish = driver.findElement(By.cssSelector("div[class*='subheader']"));
+        WebElement labelFinish = driver.findElement(By.cssSelector("span[class*='title']"));
         String actualLabel = labelFinish.getText();
-        assertEquals("Finish", actualLabel);
+        assertEquals("CHECKOUT: COMPLETE!", actualLabel);
 
         WebElement labelThankYou = driver.findElement(By.cssSelector("h2[class*='complete-header']"));
         String actualLabel2 = labelThankYou.getText();
